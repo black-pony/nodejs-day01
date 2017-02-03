@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//参考sea.js,可以把loadJs替换成use方法、require方法
+		function loadJs(path,callback){
+			//选中head标签
+			var header = document.getElementsByTagName("head")[0];
+			//创建一个script标签
+			var script = document.createElement("script");
+			//把传入的src地址传入这个script标签
+			script.setAttribute("src",path);
+			//让这个script标签追加到head当中，即追加到DOM当中
+			header.appendChild(script);
+
+			script.onload 
+				= script.onreadystatechange 
+				= function(){
+				if(!window.readyState/*这是FF等高级浏览器的判断语句，因为ff下没有readyState这人值，IE的readyState肯定有值*/ || window.readyState == "loaded" || window.readyState == "complete"){
+					alert("loaded");
+
+					//回调函数
+					if(callback!=undefined && typeof callback == "function"){
+						callback();
+					}
+				}
+			}
+		}
+		loadJs("./a.js",function(){
+			alert("js加载成功");
+		});
+	</script>
+</body>
+</html>

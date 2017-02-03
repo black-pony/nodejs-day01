@@ -1,0 +1,11 @@
+define(function(require,exports,module){
+	console.log(1);
+	//一、虽然看起来只会执行require('./b'),但是其实是把b.js,c.js全部加载下来的，但是c.js里的define里面的代码不会执行
+	//二、先执行当前模块的代码，直到读取到require具体的模块的时候，才会所依赖的模块的代码
+	if(true){
+		require('./b');
+	}else{
+		require('./c');
+	}
+	console.log(2);
+});

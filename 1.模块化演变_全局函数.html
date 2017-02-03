@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.calculator{
+			width: 700px;
+			height: 100px;
+			background: lightgreen;
+			margin:20px auto;
+			text-align: center;
+			line-height: 100px;
+		}
+	</style>
+	<script>
+	//这里实现计算功能的函数可以称为一个模块，但是只能人为的认为他们是一个模块，但是程序是没有办法区分，只能通过注释来隔离
+	//-----------------------计算模块 开始-----------------------
+		//加
+		function add(a,b){
+			return parseFloat(a) + parseFloat(b);
+		}
+
+		//减
+		function substract(a,b){
+			return parseFloat(a) - parseFloat(b);
+		}
+
+		//乘
+		function multiply(a,b){
+			return parseFloat(a) * parseFloat(b);
+		}
+
+		//除
+		function divide(a,b){
+			return parseFloat(a) / parseFloat(b);
+		}
+	//-------------------------计算模块 结束-------------------
+
+		window.onload = function(){
+			var btn = document.getElementById("btn");
+			var operator = document.getElementById("operator");
+			var result = document.getElementById("result");
+			btn.onclick = function(){
+				var a = document.getElementById("a").value;
+				var b = document.getElementById("b").value;
+				switch(operator.value){
+					case '0'://case条件判断的是全等于===，如果写case 0是错的
+						result.value = add(a,b);
+						break;
+					case '1':
+						result.value = substract(a,b);
+						break;
+					case '2':
+						result.value = multiply(a,b);
+						break;
+					case '3':
+						result.value = divide(a,b);
+						break;
+				}
+			};
+		};
+	</script>
+ 	<script src="abc.js"></script>
+	<script>
+		//思考：这里的add还是我们一开始定义的add吗？
+		var a = 100;
+		var b = 200;
+		console.log(add(a,b));
+	</script> 
+</head>
+<body>
+	<div class="calculator">
+		<input type="text" id="a">
+		<select  id="operator">
+			<option value="0">+</option>
+			<option value="1">-</option>
+			<option value="2">*</option>
+			<option value="3">/</option>
+		</select>
+		<input type="text" id="b">
+		<input type="button" id="btn" value="=">
+		<input type="text" id="result">
+	</div>
+</body>
+</html>

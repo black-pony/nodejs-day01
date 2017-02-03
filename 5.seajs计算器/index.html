@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    .calculator{
+      width: 700px;
+      height: 100px;
+      background: lightgreen;
+      margin:20px auto;
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="a">
+    <select  id="operator">
+      <option value="0">+</option>
+      <option value="1">-</option>
+      <option value="2">*</option>
+      <option value="3">/</option>
+    </select>
+    <input type="text" id="b">
+    <input type="button" id="btn" value="=">
+    <input type="text" id="result">
+  </div>
+  <script src="lib/sea.js"></script>
+  <script>
+    seajs.use("./js/main",function(){
+      console.log("代码执行成功");
+    });
+  </script>
+</body>
+</html>

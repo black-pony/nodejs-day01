@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.calculator{
+			width: 700px;
+			height: 100px;
+			background: lightgreen;
+			margin:20px auto;
+			text-align: center;
+			line-height: 100px;
+		}
+	</style>
+	<script>
+		var calculator = {
+			add:function(a,b){
+				return parseFloat(a) + parseFloat(b);
+			},
+			substract:function(a,b){
+				return parseFloat(a) - parseFloat(b);
+			},
+			multiply:function(a,b){
+				return parseFloat(a) * parseFloat(b);
+			},
+			divide:function(a,b){
+				return parseFloat(a) / parseFloat(b);
+			}
+		};
+		
+		// var calculator = {name:'eric zheng'};//这样一写，就会覆盖掉上面的calculator对象
+
+		window.onload = function(){
+			var btn = document.getElementById("btn");
+			var operator = document.getElementById("operator");
+			var result = document.getElementById("result");
+			btn.onclick = function(){
+				var a = document.getElementById("a").value;
+				var b = document.getElementById("b").value;
+				switch(operator.value){
+					case '0':
+						result.value = calculator.add(a,b);
+						break;
+					case '1':
+						result.value = calculator.substract(a,b);
+						break;
+					case '2':
+						result.value = calculator.multiply(a,b);
+						break;
+					case '3':
+						result.value = calculator.divide(a,b);
+						break;
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<div class="calculator">
+		<input type="text" id="a">
+		<select  id="operator">
+			<option value="0">+</option>
+			<option value="1">-</option>
+			<option value="2">*</option>
+			<option value="3">/</option>
+		</select>
+		<input type="text" id="b">
+		<input type="button" id="btn" value="=">
+		<input type="text" id="result">
+	</div>
+</body>
+</html>

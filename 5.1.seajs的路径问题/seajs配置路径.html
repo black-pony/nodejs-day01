@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>seajs - helloworld</title>
+</head>
+<body>
+  <script src="./lib/sea.js"></script>
+  <script>
+    seajs.config({
+        base:"./js",
+        alias:{
+            m:"main"
+        }
+    });
+    seajs.use('m',function(){
+      
+    })
+  </script>
+</body>
+</html>

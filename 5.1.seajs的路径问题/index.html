@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>seajs - helloworld</title>
+</head>
+<body>
+  <script src="js/sea.js"></script>
+  <!--<script src="js/main.js"></script> 这里可以不用写了-->
+  <script>
+    // 为了简洁，最好不要在路径中加 .js
+    //  入口模块
+    // 执行成功会触发回调函数
+    //注意：在sea.js当中，js/main和./js/main的含义不是一样的
+    // js/main代表的是在sea.js所在的文件为基准去找，所以找到的是 --> SEAJS所在的父级文件夹/js/main.js 这样的话会找不到的
+    // ./js/main代表的是以当前html文件去找
+    seajs.use('main',function(){ // 或者写成 seajs.use("./js/main",function(){})
+      
+    })
+  </script>
+</body>
+</html>
