@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-day01",
+  "version": "1.0.0",
+  "description": "长沙node.js课件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/black-pony/nodejs-day01.git"
+  },
+  "author": "ericzheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/black-pony/nodejs-day01/issues"
+  },
+  "homepage": "https://github.com/black-pony/nodejs-day01#readme"
+}
